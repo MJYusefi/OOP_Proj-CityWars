@@ -1,6 +1,5 @@
 # OOP_Proj-CityWars-
 OOP Project
 
-محمد جواد یوسفی       402102776
-
-عماد فیروزی
+@MJY Mohammad-Javad Yoisefi 402102776
+@EF Emad Firoozi 402102251
