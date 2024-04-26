@@ -1,5 +1,4 @@
-# OOP_Proj-CityWars-
-OOP Project
-
-@MJY Mohammad-Javad Yoisefi 402102776
-@EF Emad Firoozi 402102251
+# OOP_Proj-CityWars
+MJY Mohammad-Javad Yoisefi 402102776
+Emad Firoozi 402102251
+started at:
