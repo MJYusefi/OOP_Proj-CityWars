@@ -90,7 +90,7 @@ public class Player {
     private ArrayList<Card> GetUserCard(String username) throws SQLException {
         String jdbcUrl = "jdbc:mysql://localhost:3306/citywars";
         String user = "root";
-        String pass = "emad3183";
+        String pass = "Mohammad6900";
         Connection connection = DriverManager.getConnection(jdbcUrl, user, pass);
         PreparedStatement pstmt;
         ResultSet rs;

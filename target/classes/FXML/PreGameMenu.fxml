@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.PreGameMenu">
+   <children>
+      <VBox prefHeight="650.0" prefWidth="1000.0">
+         <children>
+            <HBox prefHeight="650.0" prefWidth="1000.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="650.0" prefWidth="500.0">
+                     <children>
+                        <HBox prefHeight="550.0" prefWidth="500.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="550.0" prefWidth="250.0" spacing="20.0">
+                                 <children>
+                                    <ImageView fitHeight="250.0" fitWidth="200.0" onMouseClicked="#play1char1" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/char1.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="250.0" fitWidth="200.0" onMouseClicked="#play1char3" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/char3.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER_LEFT" prefHeight="550.0" prefWidth="250.0" spacing="20.0">
+                                 <children>
+                                    <ImageView fitHeight="250.0" fitWidth="200.0" onMouseClicked="#play1char2" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/char2.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="250.0" fitWidth="200.0" onMouseClicked="#play1char4" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/char4.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Label prefHeight="50.0" text="Player 1">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="650.0" prefWidth="500.0">
+                     <children>
+                        <HBox prefHeight="550.0" prefWidth="500.0">
+                           <children>
+                              <VBox alignment="CENTER_RIGHT" prefHeight="550.0" prefWidth="250.0" spacing="20.0">
+                                 <children>
+                                    <ImageView fitHeight="250.0" fitWidth="200.0" onMouseClicked="#play2char1" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/char1.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="250.0" fitWidth="200.0" onMouseClicked="#play2char3" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/char3.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="550.0" prefWidth="250.0" spacing="20.0">
+                                 <children>
+                                    <ImageView fitHeight="250.0" fitWidth="200.0" onMouseClicked="#play2char2" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/char2.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="250.0" fitWidth="200.0" onMouseClicked="#play2char4" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/char4.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Label prefHeight="50.0" text="Player 2">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="150.0" prefWidth="1000.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="150.0" prefWidth="300.0">
+                     <children>
+                        <Button mnemonicParsing="false" onMouseClicked="#startGame" prefHeight="50.0" prefWidth="200.0" text="Start Game">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" prefHeight="150.0" prefWidth="700.0" spacing="30.0">
+                     <children>
+                        <Label text="If you enter the betting game, enter the amount you want to bet, if not, enter 0.">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="bet" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

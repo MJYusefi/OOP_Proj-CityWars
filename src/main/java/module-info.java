@@ -3,6 +3,7 @@ module untitled {
     requires javafx.fxml;
     requires javafx.media;
     requires java.sql;
+    requires jfiglet;
 
     exports View;
     exports Model;

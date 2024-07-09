@@ -12,12 +12,6 @@ import javafx.stage.Stage;
 import java.sql.SQLException;
 
 public class MainMenu extends Application {
-    public MainMenu() throws SQLException {
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
 
     public static Stage stage;
     Player player1;    Player player2;

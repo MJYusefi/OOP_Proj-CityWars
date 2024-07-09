@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Database {
     public static String jdbcUrl = "jdbc:mysql://localhost:3306/citywars";
     public static String user = "root";
-    public static String pass = "emad3183";
+    public static String pass = "Mohammad6900";
     public static int MAX_CARD_ID = 0 ;
     public static int MAX_USER_ID = 0 ;
     public static ArrayList<Card> AllCards = new ArrayList<Card>();
