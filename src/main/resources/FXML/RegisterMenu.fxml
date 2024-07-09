@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="450.0" prefWidth="450.0" styleClass="main-pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.RegisterMenu">
+
+    <Text layoutX="75.0" layoutY="26.94921875" styleClass="header-text" text="Register" textAlignment="CENTER" wrappingWidth="300.3646125793457" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="14.0">
+      <font>
+         <Font name="Franklin Gothic Demi Cond" size="24.0" />
+      </font></Text>
+
+    <Label styleClass="label-text" text="Username:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="60.0">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Label>
+    <TextField fx:id="usernameField" styleClass="text-field" stylesheets="@../CSS/styles.css" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="60.0" />
+
+    <Label styleClass="label-text" text="Password:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="100.0">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Label>
+    <PasswordField fx:id="passwordField" styleClass="text-field" stylesheets="@../CSS/styles.css" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="100.0" />
+    <Button fx:id="generatePasswordButton" layoutX="319.0" layoutY="100.0" styleClass="button" stylesheets="@../CSS/styles.css" text="Generate" AnchorPane.leftAnchor="319.0" AnchorPane.topAnchor="100.0" />
+
+    <Label styleClass="label-text" text="Nickname:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="140.0">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Label>
+    <TextField fx:id="nicknameField" styleClass="text-field" stylesheets="@../CSS/styles.css" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="140.0" />
+
+    <Label styleClass="label-text" text="Email:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="180.0">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Label>
+    <TextField fx:id="emailField" styleClass="text-field" stylesheets="@../CSS/styles.css" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="180.0" />
+
+    <Label styleClass="label-text" text="Security Question:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="220.0">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Label>
+    <ChoiceBox fx:id="securityQuestionChoiceBox" prefHeight="37.0" prefWidth="289.0" styleClass="choice-box" stylesheets="@../CSS/styles.css" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="220.0">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="What is your pet's name?" />
+                <String fx:value="What is your mother's maiden name?" />
+                <String fx:value="What is your first school's name?" />
+            </FXCollections>
+        </items>
+    </ChoiceBox>
+
+    <Label layoutX="20.0" layoutY="271.6666666666667" styleClass="label-text" text="Answer:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="271.6666666666667">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Label>
+    <TextField fx:id="securityAnswerField" layoutX="140.0" layoutY="271.6666666666667" styleClass="text-field" stylesheets="@../CSS/styles.css" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="271.6666666666667" />
+
+    <Label layoutX="20.0" layoutY="311.6666666666667" styleClass="label-text" text="CAPTCHA:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="311.6666666666667">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Label>
+    <TextField fx:id="captchaField" layoutX="140.0" layoutY="311.6666666666667" styleClass="text-field" stylesheets="@../CSS/styles.css" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="311.6666666666667" />
+    <Label fx:id="captchaLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="315.0" layoutY="313.0" prefHeight="25.0" prefWidth="125.0" styleClass="captcha-label" textAlignment="CENTER" AnchorPane.leftAnchor="315.0" AnchorPane.topAnchor="313.0">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Label>
+
+    <Button fx:id="registerButton" layoutX="140.0" layoutY="351.6666666666667" styleClass="button" stylesheets="@../CSS/styles.css" text="Register" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="351.6666666666667" />
+
+    <Label fx:id="messageLabel" layoutX="20.0" layoutY="391.0" prefHeight="28.0" prefWidth="219.0" textFill="#cf2e19" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="391.0">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Label>
+
+</AnchorPane>

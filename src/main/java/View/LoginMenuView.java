@@ -62,15 +62,27 @@ public class LoginMenuView extends Application {
     @FXML
     private void initialize() {
         signInButton.setOnAction(event -> handleSignIn());
-        signUpButton.setOnAction(event -> handleSignUp());
-        forgotPasswordButton.setOnAction(event -> handleForgotPassword());
+        signUpButton.setOnAction(event -> {
+            try {
+                handleSignUp();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        forgotPasswordButton.setOnAction(event -> {
+            try {
+                handleForgotPassword();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
     public static Stage stage;
 
     @Override
     public  void start(Stage stage) throws IOException {
-        MainMenu.stage = stage;
+        this.stage = stage;
         Pane pane = FXMLLoader.load(MainMenu.class.getResource("/FXML/LoginMenu.fxml"));
         Scene scene = new Scene(pane);
         stage.setScene(scene);
@@ -102,8 +114,9 @@ public class LoginMenuView extends Application {
         }
     }
 
-    private void handleSignUp() {
+    private void handleSignUp() throws IOException {
         // Handle sign-up logic
+        new RegisterMenu().start(stage);
     }
 
     private void handleForgotPassword() throws Exception {

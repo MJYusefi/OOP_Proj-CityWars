@@ -3,7 +3,6 @@ package Controller;
 
 import Model.Admin;
 import Model.Player;
-import com.github.lalyos.jfiglet.FigletFont;
 import java.security.SecureRandom;
 import java.util.Random;
 import java.util.Scanner;
@@ -28,82 +27,21 @@ public class AuthController {
     }
 
 
-    public static boolean signUp(String command) {
-        Matcher Userdata = CommandExtractor.sign_up(command);
-        if(!CheckEmptyCommand(Userdata)){
-            Player tempUser = new Player(Userdata.group(1),Userdata.group(2),Userdata.group(5),Userdata.group(4));
-            if(isValidUsername(tempUser.getUsername())){
-                if(!Player.ExistThisUsername(tempUser.getUsername())){
-                    if (isValidPassword(tempUser.getPassword()) || tempUser.getPassword().equals("random")){
-                        if(isValidEmail(tempUser.getEmail())){
-                            if(tempUser.getPassword().equals("random")){
-                                tempUser.setPassword(PasswordGenerator.generateRandomPassword());
-                                System.out.printf("Your random password: %s\n",tempUser.getPassword());
-                                while(true) {
-                                    System.out.print("Please enter your password for confirmation : ");
-                                    String confirm = scanner.next();
-                                    if (!confirm.equals(tempUser.getPassword())) {
-                                        System.out.println("Faild in confirmation");
-                                    }
-                                }
-                            }
-                            else{
-                                if(!tempUser.getPassword().equals(Userdata.group(3))){
-                                    System.out.println("The confirmation password failed!");
-                                    return false;
-                                }
-                            }
-                            System.out.println("User created successfully. Please choose a security question :\n" +
-                                    "• 1-What is your father’s name ? \n" +
-                                    "• 2-What is your favourite color ? \n" +
-                                    "• 3-What was the name of your first pet?");
-                            while(true) {
-                                System.out.printf(">> ");
-                                String line = scanner.nextLine();
-                                Matcher QuestionMatcher = QuestionCommand(line);
-                                if (QuestionMatcher.find()) {
-                                    if (!QuestionMatcher.group(2).equals(QuestionMatcher.group(3)))
-                                        System.out.println("Try Again");
-                                    else{
-                                        if(QuestionMatcher.group(1).equals("1")) {
-                                            tempUser.setQuestion("What is your father’s name ?");
-                                            tempUser.setAnswer(QuestionMatcher.group(2));
-                                        }
-                                        if(QuestionMatcher.group(1).equals("2")) {
-                                            tempUser.setQuestion("What is your favourite color ?");
-                                            tempUser.setAnswer(QuestionMatcher.group(2));
-                                        }
-                                        if(QuestionMatcher.group(1).equals("3")) {
-                                            tempUser.setQuestion("What was the name of your first pet?");
-                                            tempUser.setAnswer(QuestionMatcher.group(2));
-                                        }
-                                        break;
-                                    }
-                                }
-                            }
-
-                            while(true) {
-                                String CaptchaANS = AsciiArtCaptcha.start();
-                                System.out.printf("\n enter captcha : ");
-                                if (CaptchaANS.equals(scanner.next())) {
-                                    Player.AddUser(tempUser);
-                                    LoginUser = tempUser ;
-                                    System.out.println("User created successfully.");
-                                    return true;
-                                }
-                                else System.out.printf("Wrong captcha\n");
-                            }
-
-                        }
+    public static String register(String username, String password , String email ,String nickname, String securityQuestion, String answer) {
+        Player tempUser = new Player(username,password,nickname,email,securityQuestion,answer);
+        if(isValidUsername(tempUser.getUsername())) {
+            if (!Player.ExistThisUsername(tempUser.getUsername())) {
+                if (isValidPassword(tempUser.getPassword())) {
+                    if (isValidEmail(tempUser.getEmail())) {
+                        return "Register successfully";
                     }
-                }else{
-                    System.out.println("This username is already taken");
+                    else return("Enter valid email");
                 }
+                else return("Password is week");
             }
-        }else {
-            System.out.println("please enter all fields correctly");
+            else return("This username is already taken");
         }
-        return false;
+        else return("Enter valid username");
     }
 
     public static Player signInPlayer2(String command) {
@@ -180,43 +118,6 @@ public class AuthController {
     }
 
     //*****************%%%%%%%%%%%%%%%******************//
-    public static boolean CheckEmptyCommand(Matcher matcher){
-        boolean hasError = false;
-        // Find and extract command parts
-        if (matcher.find()) {
-
-            String username = matcher.group(1);
-            String password = matcher.group(2);
-            String passwordConfirmation = matcher.group(3);
-            String email = matcher.group(4);
-            String nickname = matcher.group(5);
-
-            // Check for empty fields
-            if (username.isEmpty()) {
-                System.out.println("Error: Username is empty.");
-                hasError = true;
-            }
-            if (password.isEmpty()) {
-                System.out.println("Error: Password is empty.");
-                hasError = true;
-            }
-            if (passwordConfirmation.isEmpty()) {
-                System.out.println("Error: Password confirmation is empty.");
-                hasError = true;
-            }
-            if (email.isEmpty()) {
-                System.out.println("Error: Email is empty.");
-                hasError = true;
-            }
-            if (nickname.isEmpty()) {
-                System.out.println("Error: Nickname is empty.");
-                hasError = true;
-            }
-        }
-        else hasError=true;
-
-        return hasError;
-    }
 
     public static boolean isValidUsername(String username) {
         String regex = "^[A-Za-z0-9_]+$";
@@ -322,59 +223,6 @@ public class AuthController {
                 characters[randomIndex] = temp;
             }
             return new String(characters);
-        }
-    }
-
-    public class AsciiArtCaptcha {
-
-        // Method to generate a random string
-        public static String generateRandomString(int length) {
-            String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-            Random random = new Random();
-            StringBuilder stringBuilder = new StringBuilder(length);
-
-            for (int i = 0; i < length; i++) {
-                stringBuilder.append(characters.charAt(random.nextInt(characters.length())));
-            }
-            return stringBuilder.toString();
-        }
-
-        public static String start() {
-            String captcha = generateRandomString(6);
-
-            try {
-                String asciiArt = FigletFont.convertOneLine(captcha);
-
-                System.out.println("CAPTCHA:");
-                System.out.println(asciiArt);
-                return captcha;
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return captcha;
-        }
-    }
-
-    public static Matcher QuestionCommand(String line){
-        String regex = "question pick -q (\\S+) -a (.+?) -c (.+)";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(line);
-
-        return matcher;
-    }
-
-    private static void monitorInput(Scanner scanner, long endTime) {
-        while (!Thread.currentThread().isInterrupted()) {
-            if (scanner.hasNext()) {
-                long currentTime = System.currentTimeMillis();
-                long remainingTime = endTime - currentTime;
-                if (remainingTime > 0) {
-                    System.out.printf("Please wait %.2f seconds before entering another password.%n", remainingTime / 1000.0);
-                } else {
-                    System.out.println("You can try entering the password now.");
-                }
-                scanner.nextLine();
-            }
         }
     }
 

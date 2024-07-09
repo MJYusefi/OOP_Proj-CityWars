@@ -26,12 +26,14 @@ public class Player {
     public int coin;
 
     //constructor
-    public Player(String username, String password, String nickname, String email) {
+    public Player(String username, String password, String nickname, String email, String question, String answer) {
         this.id = IdCounter++;
         this.Username = username;
         this.Password = password;
         this.Nickname = nickname;
         this.Email = email;
+        this.Question = question;
+        this.Answer = answer;
         this.level =1;
         this.hp = 100;
         this.xp = 0;
