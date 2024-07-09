@@ -11,6 +11,7 @@ public class Card {
     public int upLevel;
     public int upCost;
     public int curlevel;
+    public String imagePath ;
 
     public Card(int id, String name, int defAtt, int dur, int playDamage, int upLevel, int upCost) {
         this.id = id;

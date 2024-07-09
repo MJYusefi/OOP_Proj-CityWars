@@ -48,7 +48,13 @@ public class MainMenu extends Application {
         });
         historyButton.setOnAction(event -> handleHistory());
         shopButton.setOnAction(event -> handleShop());
-        profileEditButton.setOnAction(event -> handleProfileEdit());
+        profileEditButton.setOnAction(event -> {
+            try {
+                handleProfileEdit();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
         exitButton.setOnAction(event -> handleExit());
         settingsButton.setOnMouseClicked(event -> handleSettings());
     }
@@ -87,9 +93,9 @@ public class MainMenu extends Application {
         System.out.println("Shop button clicked");
     }
 
-    private void handleProfileEdit() {
+    private void handleProfileEdit() throws Exception {
         // Handle profile edit logic
-        System.out.println("Profile Edit button clicked");
+        new ProfileMenu().start(stage);
     }
 
     private void handleSettings() {

@@ -1,33 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="profile-pane" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ProfileMenu">
+<AnchorPane prefHeight="600.0" prefWidth="495.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ProfileMenu">
+    <!-- User Information at the Top -->
+    <Text fx:id="username" layoutX="225.0" layoutY="45.0" styleClass="user-info" text="Username:" textAlignment="CENTER" wrappingWidth="186.00000047683716" AnchorPane.leftAnchor="225.0" AnchorPane.topAnchor="27.43798828125">
+      <font>
+         <Font name="Berlin Sans FB Demi Bold" size="19.0" />
+      </font></Text>
 
-    <Text text="Profile" styleClass="title-text" AnchorPane.topAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+    <Text layoutX="26.333333333333332" layoutY="165.16910807291666" styleClass="user-info" text="Email:" AnchorPane.leftAnchor="26.333333333333332" AnchorPane.topAnchor="152.66666666666666">
+      <font>
+         <Font name="Britannic Bold" size="15.0" />
+      </font></Text>
+    <TextField fx:id="emailField" layoutX="105.0" layoutY="148.0" prefWidth="200.0" styleClass="user-info" AnchorPane.leftAnchor="105.0" AnchorPane.topAnchor="148.0" stylesheets="@../CSS/styles.css">
+      <font>
+         <Font name="Arial Rounded MT Bold" size="14.0" />
+      </font></TextField>
 
-    <ListView fx:id="cardsListView" prefWidth="200.0" AnchorPane.topAnchor="80.0" AnchorPane.leftAnchor="20.0" AnchorPane.bottomAnchor="20.0">
+    <Text layoutX="25.0" layoutY="195.0" styleClass="user-info" text="Nickname:" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="182.49755859375">
+      <font>
+         <Font name="Britannic Bold" size="15.0" />
+      </font></Text>
+    <TextField fx:id="nicknameField" layoutX="105.0" layoutY="178.0" prefWidth="200.0" styleClass="user-info" AnchorPane.leftAnchor="105.0" AnchorPane.topAnchor="178.0" stylesheets="@../CSS/styles.css">
+      <font>
+         <Font name="Arial Rounded MT Bold" size="14.0" />
+      </font></TextField>
+
+    <Text fx:id="coin" layoutX="154.0" layoutY="43.0" styleClass="user-info" text="Coins:" wrappingWidth="90.240234375" AnchorPane.leftAnchor="154.0" AnchorPane.topAnchor="28.8056640625">
+      <font>
+         <Font name="Arial Rounded MT Bold" size="15.0" />
+      </font></Text>
+    <ImageView fx:id="coinImage" fitHeight="50.0" fitWidth="49.0" layoutX="105.0" layoutY="13.0" AnchorPane.leftAnchor="105.0" AnchorPane.topAnchor="13.0">
+      <image>
+         <Image url="@../img/coin.jpg" />
+      </image></ImageView>
+
+    <Text layoutX="281.0" layoutY="92.94921875" styleClass="user-info" text="XP:" wrappingWidth="130.90692901611328" AnchorPane.leftAnchor="281.0" AnchorPane.topAnchor="80.0" fx:id="xp">
+      <font>
+         <Font name="Arial Rounded MT Bold" size="12.0" />
+      </font></Text>
+    <ProgressBar layoutX="61.0" layoutY="79.0" prefWidth="200.0" styleClass="user-info" AnchorPane.leftAnchor="61.0" AnchorPane.topAnchor="79.0" fx:id="xpProgressBar" stylesheets="@../CSS/styles.css"/>
+
+    <Text fx:id="hp" layoutX="60.0" layoutY="127.0" styleClass="user-info" text="HP:" wrappingWidth="200.0" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="114.0">
+      <font>
+         <Font name="Arial Rounded MT Bold" size="12.0" />
+      </font></Text>
+    <ImageView fx:id="hpImage" fitHeight="34.0" fitWidth="34.0" layoutX="13.0" layoutY="71.0" AnchorPane.leftAnchor="13.0" AnchorPane.topAnchor="71.0">
+      <image>
+         <Image url="@../img/xp.png" />
+      </image></ImageView>
+
+    <!-- ListView for User's Deck Cards -->
+    <ListView fx:id="cardsListView" layoutX="41.333333333333336" prefHeight="370.0" prefWidth="213.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="41.0" AnchorPane.topAnchor="220.0" stylesheets="@../CSS/styles.css">
         <cellFactory>
         </cellFactory>
     </ListView>
 
-    <ImageView fx:id="cardImageView" fitWidth="200.0" fitHeight="200.0" preserveRatio="true" AnchorPane.topAnchor="80.0" AnchorPane.leftAnchor="240.0" />
+    <!-- Card Information Display -->
+    <Text layoutX="293.0" layoutY="239.0" styleClass="title-text" text="Card Information" AnchorPane.leftAnchor="293.0" AnchorPane.topAnchor="219.58935546875">
+      <font>
+         <Font name="Berlin Sans FB Demi Bold" size="21.0" />
+      </font></Text>
 
-    <Text fx:id="cardName" styleClass="card-details" AnchorPane.topAnchor="300.0" AnchorPane.leftAnchor="240.0" />
-    <Text fx:id="cardDefAtt" styleClass="card-details" AnchorPane.topAnchor="320.0" AnchorPane.leftAnchor="240.0" />
-    <Text fx:id="cardDur" styleClass="card-details" AnchorPane.topAnchor="340.0" AnchorPane.leftAnchor="240.0" />
-    <Text fx:id="cardPlayDamage" styleClass="card-details" AnchorPane.topAnchor="360.0" AnchorPane.leftAnchor="240.0" />
-    <Text fx:id="cardUpLevel" styleClass="card-details" AnchorPane.topAnchor="380.0" AnchorPane.leftAnchor="240.0" />
-    <Text fx:id="cardUpCost" styleClass="card-details" AnchorPane.topAnchor="400.0" AnchorPane.leftAnchor="240.0" />
-    <Text fx:id="cardCurLevel" styleClass="card-details" AnchorPane.topAnchor="420.0" AnchorPane.leftAnchor="240.0" />
+    <ImageView fx:id="cardImage" fitHeight="150.0" fitWidth="150.0" layoutX="300.0" layoutY="260.0" preserveRatio="true" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="260.0" />
 
-    <ScrollBar fx:id="listScrollBar" layoutX="7.0" layoutY="100.0" orientation="VERTICAL" visibleAmount="0.1"
-               blockIncrement="10.0" unitIncrement="5.0"
-               AnchorPane.topAnchor="80.0" AnchorPane.bottomAnchor="20.0"
-               value="#{cardsListView.scrollTopProperty}" max="#{cardsListView.heightProperty}"
-    />
+    <Text layoutX="300.0" layoutY="433.0" styleClass="card-info" text="Name:" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="420.05078125">
+      <font>
+         <Font name="Britannic Bold" size="15.0" />
+      </font></Text>
+    <Text fx:id="cardName" layoutX="373.3333333333333" layoutY="432.2825520833333" styleClass="card-info" wrappingWidth="118.240234375" AnchorPane.leftAnchor="373.0" AnchorPane.topAnchor="419.0" />
 
+    <Text layoutX="300.0" layoutY="463.0" styleClass="card-info" text="Level:" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="450.05078125">
+      <font>
+         <Font name="Britannic Bold" size="15.0" />
+      </font></Text>
+    <Text fx:id="cardLevel" layoutX="374.0" layoutY="462.0" styleClass="card-info" wrappingWidth="90.240234375" AnchorPane.leftAnchor="374.0" AnchorPane.topAnchor="449.0" />
+
+    <Text layoutX="300.0" layoutY="493.0" styleClass="card-info" text="Damage:" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="480.0">
+      <font>
+         <Font name="Britannic Bold" size="15.0" />
+      </font></Text>
+    <Text fx:id="cardDamage" layoutX="376.0" layoutY="492.3333333333333" styleClass="card-info" wrappingWidth="90.240234375" AnchorPane.leftAnchor="376.0" AnchorPane.topAnchor="479.0" />
+
+    <Text layoutX="300.0" layoutY="523.0" styleClass="card-info" text="Duration:" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="510.05078125">
+      <font>
+         <Font name="Britannic Bold" size="15.0" />
+      </font></Text>
+    <Text fx:id="cardDuration" layoutX="378.3333333333333" layoutY="522.3333333333333" styleClass="card-info" wrappingWidth="106.34503173828125" AnchorPane.leftAnchor="378.3333333333333" AnchorPane.topAnchor="509.33333333333326" />
+
+    <Text layoutX="300.0" layoutY="553.0" styleClass="card-info" text="Defense:" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="540.05078125">
+      <font>
+         <Font name="Britannic Bold" size="15.0" />
+      </font></Text>
+    <Text fx:id="cardDefense" layoutX="378.0" layoutY="552.0" styleClass="card-info" wrappingWidth="106.34503173828125" AnchorPane.leftAnchor="378.0" AnchorPane.topAnchor="539.05078125" />
+   <ImageView fitHeight="59.0" fitWidth="56.0" layoutX="13.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../img/lvl.png" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="34.0" fitWidth="49.0" layoutX="5.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../img/hp.jpg" />
+      </image>
+   </ImageView>
+   <Button  layoutX="418.0" layoutY="10.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="63.0" text="Back" onMouseClicked="#back" stylesheets="@../CSS/styles.css" />
 </AnchorPane>

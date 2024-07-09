@@ -194,6 +194,14 @@ public class Database {
         return null;
     }
 
+    public static Card getCardByName(String name) {
+        for(Card c : AllCards){
+            if(c.name.equals(name)) return c;
+        }
+        return null;
+    }
+
+
 
     ////*************////
     public static void ShowCards(){
