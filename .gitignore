@@ -29,3 +29,5 @@ hs_err_pid*
 # Eclipse project files
 .project
 .classpath
+
+target/
