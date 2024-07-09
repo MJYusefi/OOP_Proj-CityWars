@@ -14,66 +14,19 @@ public class AuthController {
     public static Player LoginUser;
     public static Admin admin = new Admin("ali","1111");
     static Scanner scanner = new Scanner(System.in);
-    private static final int LOCKOUT_TIME_MS = 5000;
     private static final String AdminPass = "1111";
 
     //*****************%%%%%%%%%%%%%%%******************//
-    public static boolean signIn(String command) {
-        if(CommandExtractor.Login(command).find()) {
-            while (true) {
-               Matcher data = CommandExtractor.Login(command);
-                if (data.find()) {
-                    if (Player.ExistThisUsername(data.group(1))) {
-                        if (Player.ExistThisUser(data.group(1), data.group(2))) {
-                            LoginUser = Player.GetUserByUsername(data.group(1));
-                            System.out.println("Login successfully");
-                            return true;
-                        }
-                        else {
-                            System.out.println("You are punished for 5 seconds. Please wait...");
-
-                            long endTime = System.currentTimeMillis() + 5000;
-                            boolean inputDuringDelay = false;
-
-                            // Continuously check for input during the 5-second delay
-                            while (System.currentTimeMillis() < endTime) {
-                                if (scanner.hasNextLine()) {
-                                    System.out.println("Input is not allowed during the delay period.");
-                                    scanner.nextLine(); // Discard the input
-                                    inputDuringDelay = true;
-                                }
-                            }
-                            System.out.printf("input again >> ");
-                            command = scanner.nextLine();
-                        }
-                    }
-                    else {
-                        System.out.println("Username doesn’t exist!");
-                        break;
-                    }
-                }
+    public static boolean signIn(String username, String password) {
+        if (Player.ExistThisUsername(username)) {
+            if (Player.ExistThisUser(username, password)) {
+                LoginUser = Player.GetUserByUsername(username);
+                return true;
             }
-        }
-        else if(CommandExtractor.ForgotPassword(command).find()){
-            Matcher data = CommandExtractor.ForgotPassword(command);
-            data.find();
-            if(Player.ExistThisUsername(data.group(1))) {
-                System.out.printf("answer this question : %s\n>> ", Player.GetUserByUsername(data.group(1)).getQuestion());
-                String ans = scanner.nextLine();
-                if (ans.equals(Player.GetUserByUsername(data.group(1)).getAnswer())) {
-                    LoginUser = Player.GetUserByUsername(data.group(1));
-                    System.out.println("Login successfully");
-                } else {
-                    System.out.println("Wrong answer!");
-                }
-            }
-            else System.out.println("Username doesn’t exist!");
-        }
-        else{
-            System.out.println("Command not found!");
         }
         return false;
     }
+
 
     public static boolean signUp(String command) {
         Matcher Userdata = CommandExtractor.sign_up(command);

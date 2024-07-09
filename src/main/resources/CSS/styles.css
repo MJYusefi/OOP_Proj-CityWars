@@ -1,0 +1,27 @@
+.label, .text, .button {
+    -fx-font-family: "Arial";
+}
+
+.title-text {
+    -fx-font-size: 48px;
+    -fx-font-family: "Impact";
+    -fx-fill: white;
+}
+
+.login-grid {
+    -fx-background-color: #333333;
+}
+
+.button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+}
+
+.button:pressed {
+    -fx-background-color: #45a049;
+}

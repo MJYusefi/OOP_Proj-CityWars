@@ -18,7 +18,7 @@ public class MainMenu extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        player1=new Player(101,"emadfiroozi", "emad3183", "em", "e@f.com", "yes", "yes", 1, 100, 100);
+//        player1=new Player(101,"emadfiroozi", "emad3183", "em", "e@f.com", "yes", "yes", 1, 100, 100);
         player2=new Player(102,"javad", "emad3183", "em", "e@f.com", "yes", "yes", 2, 50, 200);
         MainMenu.stage = stage;
         Pane pane = FXMLLoader.load(MainMenu.class.getResource("/FXML/MainMenu.fxml"));

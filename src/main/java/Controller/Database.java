@@ -180,6 +180,20 @@ public class Database {
         return false;
     }
 
+    public static boolean ExistThisUsername(String Username) {
+        for(Player i : Players){
+            if(i.getUsername().equals(Username)) return true;
+        }
+        return false;
+    }
+
+    public static Player getByUsername(String Username) {
+        for(Player i : Players){
+            if(i.getUsername().equals(Username)) return i;
+        }
+        return null;
+    }
+
 
     ////*************////
     public static void ShowCards(){
