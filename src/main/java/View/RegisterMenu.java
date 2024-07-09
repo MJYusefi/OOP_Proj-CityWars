@@ -56,7 +56,13 @@ public class RegisterMenu extends Application {
     @FXML
     private void initialize() {
         generatePasswordButton.setOnAction(event -> generateRandomPassword());
-        registerButton.setOnAction(event -> handleRegister());
+        registerButton.setOnAction(event -> {
+            try {
+                handleRegister();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
         generateCaptcha();
     }
 
@@ -73,7 +79,6 @@ public class RegisterMenu extends Application {
         stage.centerOnScreen();
         stage.show();
     }
-
 
     private void generateRandomPassword() {
         StringBuilder password = new StringBuilder(PASSWORD_LENGTH);
@@ -92,7 +97,7 @@ public class RegisterMenu extends Application {
         captchaLabel.setText(captcha.toString());
     }
 
-    private void handleRegister() {
+    private void handleRegister() throws Exception {
         String username = usernameField.getText();
         String password = passwordField.getText();
         String nickname = nicknameField.getText();
@@ -107,7 +112,11 @@ public class RegisterMenu extends Application {
             return;
         }
 
-        String message = AuthController.register(username, password, nickname, email, securityQuestion, securityAnswer); // Assuming this method returns a boolean indicating success or failure
+        String message = AuthController.register(username, password, nickname, email, securityQuestion, securityAnswer);
         messageLabel.setText(message);
+        if(message.equals("Register successfully")){
+            MainMenu menu = new MainMenu();
+            menu.start(LoginMenuView.stage);
+        }
     }
 }

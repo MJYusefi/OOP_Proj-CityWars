@@ -24,7 +24,8 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class LoginMenuView extends Application {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
+        Database.InitProgram();
         launch(args);
     }
 
@@ -61,7 +62,13 @@ public class LoginMenuView extends Application {
 
     @FXML
     private void initialize() {
-        signInButton.setOnAction(event -> handleSignIn());
+        signInButton.setOnAction(event -> {
+            try {
+                handleSignIn();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
         signUpButton.setOnAction(event -> {
             try {
                 handleSignUp();
@@ -91,9 +98,9 @@ public class LoginMenuView extends Application {
         stage.show();
     }
 
-    private void handleSignIn() {
+    private void handleSignIn() throws Exception {
         if (isDelayActive) {
-            return;  // Do nothing if delay is active
+            return;
         }
 
         String username = usernameField.getText();
@@ -103,7 +110,8 @@ public class LoginMenuView extends Application {
 
         if (isAuthenticated) {
             messageLabel.setText("Login successful!");
-            // Proceed with successful login actions
+            MainMenu menu = new MainMenu();
+            menu.start(LoginMenuView.stage);
         } else {
             failedAttempts++;
             if (failedAttempts > MAX_FAILED_ATTEMPTS) {
@@ -127,7 +135,7 @@ public class LoginMenuView extends Application {
                 messageLabel1.setText(p.getQuestion());
                 if(answer.getText().equals(p.getAnswer())){
                     MainMenu menu = new MainMenu();
-                    menu.player1 = p;
+                    menu.player = p;
                     menu.start(stage);
                 }
                 else if(answer.getText().equals("")) messageLabel.setText("Enter answer");

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="profile-pane" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ProfileMenu">
+
+    <Text text="Profile" styleClass="title-text" AnchorPane.topAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+
+    <ListView fx:id="cardsListView" prefWidth="200.0" AnchorPane.topAnchor="80.0" AnchorPane.leftAnchor="20.0" AnchorPane.bottomAnchor="20.0">
+        <cellFactory>
+        </cellFactory>
+    </ListView>
+
+    <ImageView fx:id="cardImageView" fitWidth="200.0" fitHeight="200.0" preserveRatio="true" AnchorPane.topAnchor="80.0" AnchorPane.leftAnchor="240.0" />
+
+    <Text fx:id="cardName" styleClass="card-details" AnchorPane.topAnchor="300.0" AnchorPane.leftAnchor="240.0" />
+    <Text fx:id="cardDefAtt" styleClass="card-details" AnchorPane.topAnchor="320.0" AnchorPane.leftAnchor="240.0" />
+    <Text fx:id="cardDur" styleClass="card-details" AnchorPane.topAnchor="340.0" AnchorPane.leftAnchor="240.0" />
+    <Text fx:id="cardPlayDamage" styleClass="card-details" AnchorPane.topAnchor="360.0" AnchorPane.leftAnchor="240.0" />
+    <Text fx:id="cardUpLevel" styleClass="card-details" AnchorPane.topAnchor="380.0" AnchorPane.leftAnchor="240.0" />
+    <Text fx:id="cardUpCost" styleClass="card-details" AnchorPane.topAnchor="400.0" AnchorPane.leftAnchor="240.0" />
+    <Text fx:id="cardCurLevel" styleClass="card-details" AnchorPane.topAnchor="420.0" AnchorPane.leftAnchor="240.0" />
+
+    <ScrollBar fx:id="listScrollBar" layoutX="7.0" layoutY="100.0" orientation="VERTICAL" visibleAmount="0.1"
+               blockIncrement="10.0" unitIncrement="5.0"
+               AnchorPane.topAnchor="80.0" AnchorPane.bottomAnchor="20.0"
+               value="#{cardsListView.scrollTopProperty}" max="#{cardsListView.heightProperty}"
+    />
+
+</AnchorPane>
