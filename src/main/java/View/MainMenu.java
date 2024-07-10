@@ -56,7 +56,13 @@ public class MainMenu extends Application {
                 throw new RuntimeException(e);
             }
         });
-        historyButton.setOnAction(event -> handleHistory());
+        historyButton.setOnAction(event -> {
+            try {
+                handleHistory();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
         shopButton.setOnAction(event -> {
             try {
                 handleShop();
@@ -99,9 +105,9 @@ public class MainMenu extends Application {
         foo.start(stage);
     }
 
-    private void handleHistory() {
+    private void handleHistory() throws Exception {
         // Handle history logic
-        System.out.println("History button clicked");
+        new HistoryMenu().start(stage);
     }
 
     private void handleShop() throws Exception {

@@ -98,3 +98,71 @@
     -fx-padding: 10;
     -fx-background-color: white;
 }
+
+/* Table styles */
+.table-view {
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #e0e0e0;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.table-view .column-header,
+.table-view .filler {
+    -fx-padding: 8px;
+    -fx-background-color: #e0e0e0;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 0 0 1px 1px;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-row-cell:filled {
+    -fx-border-color: #cccccc;
+    -fx-border-width: 0 0 1px 1px;
+    -fx-background-color: #ffffff;
+}
+
+.table-view .table-row-cell:empty {
+    -fx-background-color: #ffffff;
+}
+
+.table-view .table-cell {
+    -fx-padding: 8px;
+    -fx-background-color: #ffffff;
+}
+
+/* Pagination styles */
+.pagination {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1px;
+}
+
+.pagination .control-buttons-box {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1px;
+    -fx-padding: 4px;
+}
+
+.pagination .page-button {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1px;
+    -fx-padding: 4px 8px;
+    -fx-font-weight: bold;
+}
+
+.pagination .page-button:hover {
+    -fx-background-color: #e0e0e0;
+}
+
+.pagination .page-button:selected {
+    -fx-background-color: #d0d0d0;
+    -fx-border-color: #aaaaaa;
+    -fx-border-width: 1px;
+}
