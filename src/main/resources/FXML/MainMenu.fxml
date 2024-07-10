@@ -4,18 +4,37 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="303.0" prefWidth="407.0" styleClass="main-pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainMenu">
 
-   <ImageView fx:id="settingsButton" fitHeight="40.0" fitWidth="40.0" layoutX="353.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+   <ImageView fx:id="settingsButton" fitHeight="40.0" fitWidth="40.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="353.0" AnchorPane.topAnchor="14.0">
       <image>
          <Image url="@../img/settings.png" />
       </image>
    </ImageView>
-   <Button fx:id="startGameButton" layoutX="141.0" layoutY="34.0" prefHeight="40.0" prefWidth="125.0" styleClass="menu-button" stylesheets="@../CSS/styles.css" text="Start Game" />
-   <Button fx:id="historyButton" layoutX="140.0" layoutY="134.0" prefHeight="40.0" prefWidth="125.0" styleClass="menu-button" stylesheets="@../CSS/styles.css" text="History" />
-   <Button fx:id="shopButton" layoutX="141.0" layoutY="85.0" prefHeight="40.0" prefWidth="125.0" styleClass="menu-button" stylesheets="@../CSS/styles.css" text="Shop" />
-   <Button fx:id="profileEditButton" layoutX="140.0" layoutY="182.0" prefHeight="40.0" prefWidth="125.0" styleClass="menu-button" stylesheets="@../CSS/styles.css" text="Profile Edit" />
-   <Button fx:id="exitButton" layoutX="141.0" layoutY="230.0" prefHeight="40.0" prefWidth="125.0" styleClass="menu-button" stylesheets="@../CSS/styles.css" text="Exit" />
+   <Button fx:id="startGameButton" layoutX="116.0" layoutY="34.0" prefHeight="40.0" prefWidth="125.0" styleClass="menu-button" stylesheets="@../CSS/styles.css" text="Start Game" />
+   <Button fx:id="historyButton" layoutX="115.0" layoutY="134.0" prefHeight="40.0" prefWidth="125.0" styleClass="menu-button" stylesheets="@../CSS/styles.css" text="History" />
+   <Button fx:id="shopButton" layoutX="116.0" layoutY="85.0" prefHeight="40.0" prefWidth="125.0" styleClass="menu-button" stylesheets="@../CSS/styles.css" text="Shop" />
+   <Button fx:id="profileEditButton" layoutX="115.0" layoutY="182.0" prefHeight="40.0" prefWidth="125.0" styleClass="menu-button" stylesheets="@../CSS/styles.css" text="Profile Edit" />
+   <Button fx:id="exitButton" layoutX="116.0" layoutY="230.0" prefHeight="40.0" prefWidth="125.0" styleClass="menu-button" stylesheets="@../CSS/styles.css" text="Exit" />
 
+   <AnchorPane layoutX="262.0" layoutY="6.0" prefHeight="40.0" prefWidth="140.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-border-radius: 8; -fx-background-radius: 10;" onMouseClicked="#edit">
+      <ImageView fx:id="hpIcon" fitHeight="20.0" fitWidth="20.0" layoutX="64.0" layoutY="4.0" onMouseClicked="#edit">
+         <image>
+            <Image url="@../img/heart.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="avatarImage" fitHeight="50.0" fitWidth="50.0" layoutX="7.0" layoutY="2.0" style="-fx-background-radius: 10;">
+         <image>
+            <Image url="@../img/char4.png" />
+         </image></ImageView>
+      <ImageView fx:id="coinIcon" fitHeight="27.0" fitWidth="28.0" layoutX="60.0" layoutY="23.0">
+         <image>
+            <Image url="@../img/coin.jpg" />
+         </image>
+      </ImageView>
+      <Text fx:id="coinsText" layoutX="86.0" layoutY="41.0" text="Coin" wrappingWidth="50.0" />
+      <Text fx:id="hpText" layoutX="84.0" layoutY="20.0" text="HP" />
+   </AnchorPane>
 </AnchorPane>

@@ -9,7 +9,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -38,7 +40,15 @@ public class MainMenu extends Application {
     private ImageView settingsButton;
 
     @FXML
+    private Text coinsText;
+
+    @FXML
+    private Text hpText;
+
+    @FXML
     private void initialize() {
+        coinsText.setText(AuthController.LoginUser.coin + " Coin");
+        hpText.setText(AuthController.LoginUser.hp + " HP");
         startGameButton.setOnAction(event -> {
             try {
                 handleStartGame();
@@ -116,6 +126,9 @@ public class MainMenu extends Application {
         stage.close();
     }
 
+    public void edit(MouseEvent mouseEvent) throws Exception {
+        new EditMenu().start(stage);
+    }
 }
 
 
