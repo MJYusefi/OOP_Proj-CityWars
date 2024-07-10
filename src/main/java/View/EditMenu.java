@@ -37,15 +37,12 @@ public class EditMenu extends Application {
     public static Stage stage;
 
     @FXML
-    private void initialize() {
-        // Initialize with user data
-        // For demonstration purposes, setting static values
+    public void initialize() {
         usernameField.setText(AuthController.LoginUser.getUsername());
         passwordField.setText(AuthController.LoginUser.getPassword());
         emailField.setText(AuthController.LoginUser.getEmail());
         nicknameField.setText(AuthController.LoginUser.getNickname());
 
-        // Save button action
         saveButton.setOnAction(event -> {
             try {
                 handleSaveButton();
@@ -56,7 +53,6 @@ public class EditMenu extends Application {
             }
         });
 
-        // Cancel button action
         cancelButton.setOnAction(event -> {
             try {
                 handleCancelButton();
@@ -65,6 +61,7 @@ public class EditMenu extends Application {
             }
         });
     }
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         this.stage = primaryStage;

@@ -104,6 +104,7 @@ public class ShopMenu extends Application {
         this.stage = primaryStage;
         Pane pane = FXMLLoader.load(MainMenu.class.getResource("/FXML/ShopMenu.fxml"));
         Scene scene = new Scene(pane);
+        scene.getStylesheets().add(getClass().getResource("/CSS/styles.css").toExternalForm());
         stage.setScene(scene);
         stage.setResizable(false);
         stage.centerOnScreen();

@@ -78,7 +78,13 @@ public class MainMenu extends Application {
             }
         });
         exitButton.setOnAction(event -> handleExit());
-        settingsButton.setOnMouseClicked(event -> handleSettings());
+        settingsButton.setOnMouseClicked(event -> {
+            try {
+                handleSettings();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
     public static Stage stage;
@@ -101,7 +107,7 @@ public class MainMenu extends Application {
         PreGameMenu foo = new PreGameMenu();
 
         foo.player1= AuthController.LoginUser;
-//        foo.player2=;
+        foo.player2 = new Player("player2","m","mj","m@g","d","a");
         foo.start(stage);
     }
 
@@ -121,9 +127,9 @@ public class MainMenu extends Application {
         new ProfileMenu().start(stage);
     }
 
-    private void handleSettings() {
+    private void handleSettings() throws IOException {
         // Handle settings logic
-        System.out.println("Settings button clicked");
+        new SettingsMenuController().start(stage);
     }
 
     private void handleExit() {

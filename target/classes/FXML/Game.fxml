@@ -4,17 +4,19 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.GameCon">
+<AnchorPane fx:id="root" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.Game">
    <children>
       <VBox prefHeight="600.0" prefWidth="1000.0">
          <children>
-            <HBox prefHeight="175.0" prefWidth="1000.0">
+            <HBox prefHeight="175.0" prefWidth="171.0">
                <children>
-                  <ImageView fitHeight="175.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="prof2" fitHeight="175.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true" />
                   <VBox alignment="CENTER" prefHeight="175.0" prefWidth="75.0" spacing="60.0">
                      <children>
                         <Label fx:id="hp2" text="Label">
@@ -29,6 +31,40 @@
                         </Label>
                      </children>
                   </VBox>
+                  <HBox fx:id="hand22" alignment="CENTER" prefHeight="175.0" prefWidth="829.0" spacing="50.0">
+                     <children>
+                        <StackPane onMouseClicked="#hand2card1" prefHeight="160.0" prefWidth="110.0">
+                           <children>
+                              <Rectangle fx:id="hand2rec1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="160.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
+                              <Text fx:id="hand2tex1" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                           </children>
+                        </StackPane>
+                        <StackPane onMouseClicked="#hand2card2" prefHeight="160.0" prefWidth="110.0">
+                           <children>
+                              <Rectangle fx:id="hand2rec2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="160.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
+                              <Text fx:id="hand2tex2" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                           </children>
+                        </StackPane>
+                        <StackPane onMouseClicked="#hand2card3" prefHeight="160.0" prefWidth="110.0">
+                           <children>
+                              <Rectangle fx:id="hand2rec3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="160.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
+                              <Text fx:id="hand2tex3" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                           </children>
+                        </StackPane>
+                        <StackPane onMouseClicked="#hand2card4" prefHeight="160.0" prefWidth="110.0">
+                           <children>
+                              <Rectangle fx:id="hand2rec4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="160.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
+                              <Text fx:id="hand2tex4" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                           </children>
+                        </StackPane>
+                        <StackPane onMouseClicked="#hand2card5" prefHeight="160.0" prefWidth="110.0">
+                           <children>
+                              <Rectangle fx:id="hand2rec5" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="160.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
+                              <Text fx:id="hand2tex5" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                           </children>
+                        </StackPane>
+                     </children>
+                  </HBox>
                </children>
             </HBox>
             <HBox prefHeight="250.0" prefWidth="1000.0">
@@ -37,6 +73,7 @@
                      <children>
                         <VBox alignment="CENTER" prefHeight="250.0" prefWidth="80.0" spacing="100.0">
                            <children>
+
                               <Label fx:id="round2" text="Label">
                                  <font>
                                     <Font size="14.0" />
@@ -49,118 +86,102 @@
                               </Label>
                            </children>
                         </VBox>
-                        <VBox prefHeight="250.0" prefWidth="840.0">
+                        <AnchorPane fx:id="chart" prefHeight="250.0" prefWidth="840.0">
                            <children>
-                              <HBox prefHeight="62.5" prefWidth="1000.0">
-                                 <children>
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                 </children>
-                              </HBox>
-                              <HBox prefHeight="62.5" prefWidth="1000.0">
-                                 <children>
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                 </children>
-                              </HBox>
-                              <HBox prefHeight="62.5" prefWidth="1000.0">
-                                 <children>
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                 </children>
-                              </HBox>
-                              <HBox prefHeight="62.5" prefWidth="1000.0">
-                                 <children>
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
-                                 </children>
-                              </HBox>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" onMouseClicked="#b2_1" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="80.0" onMouseClicked="#b2_3" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="40.0" onMouseClicked="#b2_2" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="120.0" onMouseClicked="#b2_4" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="160.0" onMouseClicked="#b2_5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="200.0" onMouseClicked="#b2_6" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="280.0" onMouseClicked="#b2_8" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="240.0" onMouseClicked="#b2_7" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="320.0" onMouseClicked="#b2_9" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="360.0" onMouseClicked="#b2_10" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="400.0" onMouseClicked="#b2_11" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="440.0" onMouseClicked="#b2_12" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="520.0" onMouseClicked="#b2_14" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="560.0" onMouseClicked="#b2_15" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="600.0" onMouseClicked="#b2_16" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="680.0" onMouseClicked="#b2_18" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="640.0" onMouseClicked="#b2_17" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="720.0" onMouseClicked="#b2_19" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="760.0" onMouseClicked="#b2_20" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="480.0" onMouseClicked="#b2_13" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="800.0" onMouseClicked="#b2_21" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutY="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="80.0" layoutY="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="40.0" layoutY="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="120.0" layoutY="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="160.0" layoutY="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="200.0" layoutY="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="280.0" layoutY="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="240.0" layoutY="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="320.0" layoutY="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="360.0" layoutY="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="400.0" layoutY="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="440.0" layoutY="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="520.0" layoutY="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="560.0" layoutY="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="600.0" layoutY="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="680.0" layoutY="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="640.0" layoutY="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="720.0" layoutY="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="760.0" layoutY="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="480.0" layoutY="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="800.0" layoutY="62.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutY="125.0" onMouseClicked="#b1_1" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="80.0" layoutY="125.0" onMouseClicked="#b1_3" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="40.0" layoutY="125.0" onMouseClicked="#b1_2" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="120.0" layoutY="125.0" onMouseClicked="#b1_4" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="160.0" layoutY="125.0" onMouseClicked="#b1_5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="200.0" layoutY="125.0" onMouseClicked="#b1_6" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="280.0" layoutY="125.0" onMouseClicked="#b1_8" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="240.0" layoutY="125.0" onMouseClicked="#b1_7" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="320.0" layoutY="125.0" onMouseClicked="#b1_9" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="360.0" layoutY="125.0" onMouseClicked="#b1_10" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="400.0" layoutY="125.0" onMouseClicked="#b1_11" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="440.0" layoutY="125.0" onMouseClicked="#b1_12" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="520.0" layoutY="125.0" onMouseClicked="#b1_14" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="560.0" layoutY="125.0" onMouseClicked="#b1_15" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="600.0" layoutY="125.0" onMouseClicked="#b1_16" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="680.0" layoutY="125.0" onMouseClicked="#b1_18" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="640.0" layoutY="125.0" onMouseClicked="#b1_17" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="720.0" layoutY="125.0" onMouseClicked="#b1_19" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="760.0" layoutY="125.0" onMouseClicked="#b1_20" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="480.0" layoutY="125.0" onMouseClicked="#b1_13" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="800.0" layoutY="125.0" onMouseClicked="#b1_21" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutY="187.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="80.0" layoutY="187.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="40.0" layoutY="187.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="120.0" layoutY="187.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="160.0" layoutY="187.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="200.0" layoutY="187.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="280.0" layoutY="187.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="240.0" layoutY="187.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="320.0" layoutY="187.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="360.0" layoutY="187.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="400.0" layoutY="187.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="440.0" layoutY="187.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="520.0" layoutY="187.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="560.0" layoutY="187.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="600.0" layoutY="187.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="680.0" layoutY="187.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="640.0" layoutY="187.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="720.0" layoutY="187.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="760.0" layoutY="187.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="480.0" layoutY="187.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="SILVER" height="62.5" layoutX="800.0" layoutY="187.5" stroke="BLACK" strokeType="INSIDE" width="40.0" />
                            </children>
-                        </VBox>
+                        </AnchorPane>
                         <VBox alignment="CENTER" prefHeight="250.0" prefWidth="80.0" spacing="100.0">
                            <children>
-                              <Label fx:id="damage2" text="Label">
+                              <Label fx:id="damage22" text="Label">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="damage1" text="Label">
+                              <Label fx:id="damage11" text="Label">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -171,9 +192,9 @@
                   </HBox>
                </children>
             </HBox>
-            <HBox prefHeight="175.0" prefWidth="1000.0">
+            <HBox prefHeight="175.0" prefWidth="171.0">
                <children>
-                  <ImageView fitHeight="175.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="prof1" fitHeight="175.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true" />
                   <VBox alignment="CENTER" prefHeight="175.0" prefWidth="75.0" spacing="60.0">
                      <children>
                         <Label fx:id="hp1" text="Label">
@@ -188,6 +209,40 @@
                         </Label>
                      </children>
                   </VBox>
+                  <HBox fx:id="hand11" alignment="CENTER" prefHeight="175.0" prefWidth="829.0" spacing="50.0">
+                     <children>
+                        <StackPane onMouseClicked="#hand1card1" prefHeight="160.0" prefWidth="110.0">
+                           <children>
+                              <Rectangle fx:id="hand1rec1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="160.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
+                              <Text fx:id="hand1tex1" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                           </children>
+                        </StackPane>
+                        <StackPane onMouseClicked="#hand1card2" prefHeight="160.0" prefWidth="110.0">
+                           <children>
+                              <Rectangle fx:id="hand1rec2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="160.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
+                              <Text fx:id="hand1tex2" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                           </children>
+                        </StackPane>
+                        <StackPane onMouseClicked="#hand1card3" prefHeight="160.0" prefWidth="110.0">
+                           <children>
+                              <Rectangle fx:id="hand1rec3" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="160.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
+                              <Text fx:id="hand1tex3" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                           </children>
+                        </StackPane>
+                        <StackPane onMouseClicked="#hand1card4" prefHeight="160.0" prefWidth="110.0">
+                           <children>
+                              <Rectangle fx:id="hand1rec4" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="160.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
+                              <Text fx:id="hand1tex4" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                           </children>
+                        </StackPane>
+                        <StackPane onMouseClicked="#hand1card5" prefHeight="160.0" prefWidth="110.0">
+                           <children>
+                              <Rectangle fx:id="hand1rec5" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="160.0" stroke="BLACK" strokeType="INSIDE" width="110.0" />
+                              <Text fx:id="hand1tex5" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                           </children>
+                        </StackPane>
+                     </children>
+                  </HBox>
                </children>
             </HBox>
          </children>
