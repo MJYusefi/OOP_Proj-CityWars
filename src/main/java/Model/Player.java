@@ -127,6 +127,13 @@ public class Player {
         return null;
     }
 
+    public Card getCardFromDeckByName(String name){
+        for(Card i : this.deck){
+            if(i.name.equals(name)) return i;
+        }
+        return null;
+    }
+
     //getter and setter
     public String getUsername() {
         return Username;

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="563.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="View.ShopMenu">
+    <ImageView fx:id="coinImage" fitHeight="73.0" fitWidth="70.0" layoutX="14.0" layoutY="9.0">
+      <image>
+         <Image url="@../img/lvl.png" />
+      </image></ImageView>
+    <ImageView fx:id="levelImage" fitHeight="48.0" fitWidth="49.0" layoutX="129.0" layoutY="14.0">
+      <image>
+         <Image url="@../img/coin.jpg" />
+      </image></ImageView>
+
+    <!-- ListView for All Cards -->
+    <ListView fx:id="cardsListView" layoutX="24.0" layoutY="132.0" prefHeight="369.0" prefWidth="226.0" />
+
+    <!-- Card Information Display -->
+    <ImageView fx:id="cardImage" fitHeight="190.0" fitWidth="161.0" layoutX="287.0" layoutY="162.0">
+      <image>
+         <Image url="@../img/Avatar.jpg" />
+      </image></ImageView>
+    <ImageView fx:id="lockedStatusImage" fitHeight="65.0" fitWidth="70.0" layoutX="94.0" layoutY="508.0" />
+    <Text fx:id="cardName" layoutX="324.0" layoutY="383.0" text="Card Name">
+      <font>
+         <Font name="Britannic Bold" size="14.0" />
+      </font></Text>
+    <Text fx:id="cardLevel" layoutX="324.0" layoutY="403.0" text="Level: 1">
+      <font>
+         <Font name="Britannic Bold" size="14.0" />
+      </font></Text>
+    <Text fx:id="cardDamage" layoutX="324.0" layoutY="423.0" text="Damage: 50">
+      <font>
+         <Font name="Britannic Bold" size="13.0" />
+      </font></Text>
+    <Text fx:id="cardDuration" layoutX="324.0" layoutY="443.0" text="Duration: 30s">
+      <font>
+         <Font name="Britannic Bold" size="14.0" />
+      </font></Text>
+    <Text fx:id="cardDefense" layoutX="324.0" layoutY="463.0" text="Defense: 20">
+      <font>
+         <Font name="Britannic Bold" size="14.0" />
+      </font></Text>
+    <Text fx:id="cardCost" layoutX="324.0" layoutY="483.0" text="Cost: 100">
+      <font>
+         <Font name="Britannic Bold" size="14.0" />
+      </font></Text>
+    <Text fx:id="cardUpgradeLevel" layoutX="324.0" layoutY="503.0" text="Upgrade Level: 2">
+      <font>
+         <Font name="Britannic Bold" size="14.0" />
+      </font></Text>
+
+    <!-- Upgrade/Buy Button -->
+    <Button fx:id="actionButton" layoutX="317.0" layoutY="522.0" prefHeight="36.0" prefWidth="78.0" text="Action" />
+
+    <!-- Back Button -->
+    <Button fx:id="backButton" layoutX="471.0" layoutY="12.0" prefHeight="36.0" prefWidth="78.0" text="Back" />
+    <!-- User Info at the Top -->
+    <Text fx:id="coinsText" layoutX="170.0" layoutY="43.0" text="Coins: 1000">
+      <font>
+         <Font name="Arial Rounded MT Bold" size="14.0" />
+      </font></Text>
+   <Text layoutX="292.0" layoutY="126.0" styleClass="title-text" text="Card Information" wrappingWidth="185.8062744140625">
+      <font>
+         <Font name="Berlin Sans FB Demi Bold" size="21.0" />
+      </font>
+   </Text>
+</AnchorPane>
