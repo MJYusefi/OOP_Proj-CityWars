@@ -102,8 +102,8 @@ public class MainMenu extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        MusicPlayer musicPlayer = MusicPlayer.getInstance("/Music/1.mp3");
-        musicPlayer.play();
+//        MusicPlayer musicPlayer = MusicPlayer.getInstance("/Music/1.mp3");
+//        musicPlayer.play();
         MainMenu.stage = stage;
         Pane pane = FXMLLoader.load(MainMenu.class.getResource("/FXML/MainMenu.fxml"));
         Scene scene = new Scene(pane);

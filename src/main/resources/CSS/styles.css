@@ -166,3 +166,10 @@
     -fx-border-color: #aaaaaa;
     -fx-border-width: 1px;
 }
+
+.BackGround {
+    -fx-background-image: url("../img/bg.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+    -fx-background-size: 600 400;
+}

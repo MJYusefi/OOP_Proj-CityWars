@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="303.0" prefWidth="407.0" styleClass="main-pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainMenu">
+<AnchorPane prefHeight="303.0" prefWidth="407.0"   styleClass="BackGround" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainMenu"  stylesheets="@../CSS/styles.css" >
 
    <ImageView fx:id="settingsButton" fitHeight="40.0" fitWidth="40.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="353.0" AnchorPane.topAnchor="14.0">
       <image>
