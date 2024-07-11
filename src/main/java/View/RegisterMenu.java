@@ -2,6 +2,8 @@ package View;
 
 
 import Controller.AuthController;
+import Controller.Database;
+import Model.Player;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -81,10 +83,7 @@ public class RegisterMenu extends Application {
     }
 
     private void generateRandomPassword() {
-        StringBuilder password = new StringBuilder(PASSWORD_LENGTH);
-        for (int i = 0; i < PASSWORD_LENGTH; i++) {
-            password.append(CHARACTERS.charAt(RANDOM.nextInt(CHARACTERS.length())));
-        }
+        String password = AuthController.generateRandomPassword.generateRandomPassword();
         passwordField.setText(password.toString());
         messageLabel.setText("Your Password is :" + password.toString());
     }
@@ -115,7 +114,9 @@ public class RegisterMenu extends Application {
         String message = AuthController.register(username, password, nickname, email, securityQuestion, securityAnswer);
         messageLabel.setText(message);
         if(message.equals("Register successfully")){
+            AuthController.LoginUser = new Player(username, password, nickname, email, securityQuestion, securityAnswer);
             MainMenu menu = new MainMenu();
+            menu.player1 = AuthController.LoginUser;
             menu.start(LoginMenuView.stage);
         }
     }

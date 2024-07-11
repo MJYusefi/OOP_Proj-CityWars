@@ -1,5 +1,6 @@
 package View;
 
+import Controller.MusicPlayer;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,8 +9,12 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Slider;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.AudioClip;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -45,10 +50,10 @@ public class SettingsMenuController extends Application {
                     setUserAgentStylesheet(null);
                     break;
                 case "Dark":
-                    setUserAgentStylesheet(getClass().getResource("dark-theme.css").toExternalForm());
+                    setUserAgentStylesheet(getClass().getResource("/CSS/dark-theme.css").toExternalForm());
                     break;
                 case "Light":
-                    setUserAgentStylesheet(getClass().getResource("light-theme.css").toExternalForm());
+                    setUserAgentStylesheet(getClass().getResource("/CSS/light-theme.css").toExternalForm());
                     break;
             }
         }
@@ -94,4 +99,5 @@ public class SettingsMenuController extends Application {
         stage.centerOnScreen();
         stage.show();
     }
+
 }

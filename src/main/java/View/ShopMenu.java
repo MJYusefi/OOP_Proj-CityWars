@@ -78,7 +78,7 @@ public class ShopMenu extends Application {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if (newValue != null) {
-                    if(isUnlocked(Database.getCardByName(newValue))) actionButton.setText("Upgrade");
+                    if(!isUnlocked(Database.getCardByName(newValue))) actionButton.setText("Upgrade");
                     else actionButton.setText("Buy");
                     displayCardDetails(Database.getCardByName(newValue));
                 }
@@ -112,27 +112,27 @@ public class ShopMenu extends Application {
     }
 
     private void displayCardDetails(Card tmp) {
-        if (isUnlocked(tmp)) {
-            cardName.setText(tmp.name);
-            cardLevel.setText(String.valueOf(tmp.curlevel));
-            if(tmp.playDamage == -1) cardDamage.setText("*");
-            else cardDamage.setText(String.valueOf(tmp.playDamage));
-            if(tmp.dur == -1) cardDamage.setText("*");
-            else cardDuration.setText(String.valueOf(tmp.dur));
-            if(tmp.defAtt == -1) cardDamage.setText("*");
-            else cardDefense.setText(String.valueOf(tmp.defAtt));
+        if (!isUnlocked(tmp)) {
+            cardName.setText("Name :" + tmp.name);
+            cardLevel.setText("Level :" + String.valueOf(tmp.curlevel));
+            if(tmp.playDamage == -1) cardDamage.setText("Damage :" + "*");
+            else cardDamage.setText("Damage :" + String.valueOf(tmp.playDamage));
+            if(tmp.dur == -1) cardDamage.setText("Duration :" + "*");
+            else cardDuration.setText("Duration :" + String.valueOf(tmp.dur));
+            if(tmp.defAtt == -1) cardDamage.setText("Def/Atk :" + "*");
+            else cardDefense.setText("Def/Atk :" + String.valueOf(tmp.defAtt));
             cardImage.setImage(new Image(String.valueOf(getClass().getResource("/img/Avatar.jpg"))));
             lockedStatusImage.setImage(new Image(String.valueOf(getClass().getResource("/img/unlocked.png"))));
         }
         else {
-            cardName.setText(tmp.name);
-            cardLevel.setText(String.valueOf(tmp.curlevel));
-            if(tmp.playDamage == -1) cardDamage.setText("*");
-            else cardDamage.setText(String.valueOf(tmp.playDamage));
-            if(tmp.dur == -1) cardDamage.setText("*");
-            else cardDuration.setText(String.valueOf(tmp.dur));
-            if(tmp.defAtt == -1) cardDamage.setText("*");
-            else cardDefense.setText(String.valueOf(tmp.defAtt));
+            cardName.setText("Name :" + tmp.name);
+            cardLevel.setText("Level :" + String.valueOf(tmp.curlevel));
+            if(tmp.playDamage == -1) cardDamage.setText("Damage :" + "*");
+            else cardDamage.setText("Damage :" + String.valueOf(tmp.playDamage));
+            if(tmp.dur == -1) cardDamage.setText("Duration :" + "*");
+            else cardDuration.setText("Duration :" + String.valueOf(tmp.dur));
+            if(tmp.defAtt == -1) cardDamage.setText("Def/Atk :" + "*");
+            else cardDefense.setText("Def/Atk :" + String.valueOf(tmp.defAtt));
             cardImage.setImage(new Image(String.valueOf(getClass().getResource("/img/Avatar.jpg"))));
             lockedStatusImage.setImage(new Image(String.valueOf(getClass().getResource("/img/lock.png"))));
         }
@@ -141,19 +141,23 @@ public class ShopMenu extends Application {
     private void handleActionButton() {
         String selectedCard = cardsListView.getSelectionModel().getSelectedItem();
         if (selectedCard != null) {
-            if (isUnlocked(Database.getCardByName(selectedCard))) {
+            if (!isUnlocked(Database.getCardByName(selectedCard))) {
                if(AuthController.LoginUser.coin > pow(AuthController.LoginUser.getCardFromDeckByName(selectedCard).curlevel,Database.getCardByName(selectedCard).upCost)){
                    if(AuthController.LoginUser.level > Database.getCardByName(selectedCard).upLevel){
                        AuthController.LoginUser.getCardFromDeckByName(selectedCard).curlevel++;
                        AuthController.LoginUser.coin -= pow(AuthController.LoginUser.getCardFromDeckByName(selectedCard).curlevel,Database.getCardByName(selectedCard).upCost);
+                       coinsText.setText(AuthController.LoginUser.coin + " Coins");
                    }
                }
             }
             else {
                 if(AuthController.LoginUser.coin > Database.getCardByName(selectedCard).upCost) {
                     if (AuthController.LoginUser.level > Database.getCardByName(selectedCard).upLevel) {
+                        actionButton.setText("Upgrade");
+                        lockedStatusImage.setImage(new Image(String.valueOf(getClass().getResource("/img/unlocked.png"))));
                         AuthController.LoginUser.deck.add(Database.getCardByName(selectedCard));
                         AuthController.LoginUser.coin -= Database.getCardByName(selectedCard).upCost;
+                        coinsText.setText(AuthController.LoginUser.coin + " Coins");
                     }
                 }
             }
@@ -171,9 +175,9 @@ public class ShopMenu extends Application {
         return true;
     }
 
-    public int pow(int p, int base){
-        int ans = 1;
-        for(int i = 0 ; i < p ; i++) ans *= base;
+    public double pow(int p, int base){
+        double ans = base;
+        for(int i = 0 ; i < p ; i++) ans *= 1.25;
         return ans;
     }
 }

@@ -55,10 +55,10 @@ public class LoginMenuView extends Application {
 
     private int failedAttempts = 0;
     private static final int MAX_FAILED_ATTEMPTS = 2;
-    private static final int LOCKOUT_DURATION = 10; // Lockout duration in seconds
-    private boolean isDelayActive = false;  // Variable to track delay state
+    private static final int LOCKOUT_DURATION = 10;
+    private boolean isDelayActive = false;
     private Timeline countdown;
-    private int remainingLockoutTime;  // Variable to track remaining lockout time
+    private int remainingLockoutTime;
 
     @FXML
     private void initialize() {
@@ -106,11 +106,13 @@ public class LoginMenuView extends Application {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
-        boolean isAuthenticated = AuthController.signIn(username, password); // Assuming this method returns a boolean indicating success or failure
+        boolean isAuthenticated = AuthController.signIn(username, password);
 
         if (isAuthenticated) {
             messageLabel.setText("Login successful!");
+            AuthController.LoginUser = Database.getByUsername(username);
             MainMenu menu = new MainMenu();
+            menu.player1 = AuthController.LoginUser;
             menu.start(LoginMenuView.stage);
         } else {
             failedAttempts++;
@@ -135,7 +137,8 @@ public class LoginMenuView extends Application {
                 messageLabel1.setText(p.getQuestion());
                 if(answer.getText().equals(p.getAnswer())){
                     MainMenu menu = new MainMenu();
-                    menu.player = p;
+                    menu.player1 = p;
+                    AuthController.LoginUser = p;
                     menu.start(stage);
                 }
                 else if(answer.getText().equals("")) messageLabel.setText("Enter answer");
@@ -149,8 +152,8 @@ public class LoginMenuView extends Application {
     private void startLockout() {
         isDelayActive = true;
         signInButton.setDisable(true);
-        failedAttempts = 0; // Reset failed attempts after starting lockout
-        remainingLockoutTime = LOCKOUT_DURATION;  // Initialize the remaining lockout time
+        failedAttempts = 0;
+        remainingLockoutTime = LOCKOUT_DURATION;
 
         countdown = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
             remainingLockoutTime--;

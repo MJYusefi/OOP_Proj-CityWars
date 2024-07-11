@@ -2,6 +2,8 @@ package View;
 
 
 import Controller.AuthController;
+import Controller.Database;
+import Controller.MusicPlayer;
 import Model.Player;
 import javafx.application.Application;
 import javafx.fxml.FXML;
@@ -15,6 +17,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class MainMenu extends Application {
     public static void main(String[] args) {
@@ -77,7 +80,13 @@ public class MainMenu extends Application {
                 throw new RuntimeException(e);
             }
         });
-        exitButton.setOnAction(event -> handleExit());
+        exitButton.setOnAction(event -> {
+            try {
+                handleExit();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        });
         settingsButton.setOnMouseClicked(event -> {
             try {
                 handleSettings();
@@ -88,10 +97,13 @@ public class MainMenu extends Application {
     }
 
     public static Stage stage;
-    public static Player player;
+    public static Player player1;
+    public static Player player2;
 
     @Override
     public void start(Stage stage) throws IOException {
+        MusicPlayer musicPlayer = MusicPlayer.getInstance("/Music/1.mp3");
+        musicPlayer.play();
         MainMenu.stage = stage;
         Pane pane = FXMLLoader.load(MainMenu.class.getResource("/FXML/MainMenu.fxml"));
         Scene scene = new Scene(pane);
@@ -102,39 +114,30 @@ public class MainMenu extends Application {
     }
 
     private void handleStartGame() throws Exception {
-        // Handle start game logic
-        System.out.println("Start Game button clicked");
-        PreGameMenu foo = new PreGameMenu();
-
-        foo.player1= AuthController.LoginUser;
-        foo.player2 = new Player("player2","m","mj","m@g","d","a");
-        foo.start(stage);
+        new LoginMenu2().start(stage);
     }
 
     private void handleHistory() throws Exception {
-        // Handle history logic
         new HistoryMenu().start(stage);
     }
 
     private void handleShop() throws Exception {
-        // Handle shop logic
         new ShopMenu().start(stage);
-        System.out.println("Shop button clicked");
     }
 
     private void handleProfileEdit() throws Exception {
-        // Handle profile edit logic
         new ProfileMenu().start(stage);
     }
 
     private void handleSettings() throws IOException {
-        // Handle settings logic
         new SettingsMenuController().start(stage);
     }
 
-    private void handleExit() {
-        // Handle exit logic
-        System.out.println("Exit button clicked");
+    private void handleExit() throws SQLException {
+        if(player1 != null)
+            Database.SaveEditInDB(player1);
+        if(player2 != null)
+            Database.SaveEditInDB(player2);
         stage.close();
     }
 

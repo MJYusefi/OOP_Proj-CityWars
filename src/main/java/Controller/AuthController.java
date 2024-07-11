@@ -27,21 +27,23 @@ public class AuthController {
     }
 
 
-    public static String register(String username, String password , String email ,String nickname, String securityQuestion, String answer) {
+    public static String register(String username, String password , String nickname, String email , String securityQuestion, String answer) {
         Player tempUser = new Player(username,password,nickname,email,securityQuestion,answer);
         if(isValidUsername(tempUser.getUsername())) {
             if (!Player.ExistThisUsername(tempUser.getUsername())) {
                 if (isValidPassword(tempUser.getPassword())) {
-                    if (isValidEmail(tempUser.getEmail())) {
-                        return "Register successfully";
-                    }
-                    else return("Enter valid email");
-                }
-                else return("Password is week");
-            }
-            else return("This username is already taken");
-        }
-        else return("Enter valid username");
+                    if(!nickname.equals("")) {
+                        if (isValidEmail(tempUser.getEmail())) {
+                            if (securityQuestion != null) {
+                                if (!answer.equals("")) {
+                                    return "Register successfully";
+                                } else return "Enter answer of security question";
+                            } else return "Enter security question";
+                        } else return ("Enter valid email");
+                    } else return "Enter nickname";
+                } else return("Password is week");
+            } else return("This username is already taken");
+        } else return("Enter valid username");
     }
 
     public static Player signInPlayer2(String command) {
@@ -101,21 +103,6 @@ public class AuthController {
         return null;
     }
 
-    public static boolean SignInAdmin(){
-        String command = scanner.nextLine();
-        Pattern password = Pattern.compile("login\\s+admin\\s+(\\S+)");
-        Matcher matcher = password.matcher(command);
-        if(matcher.find()) {
-            if (matcher.group(1).equals(AdminPass)) {
-                System.out.println("Admin Successfully logged in");
-                return true;
-            }
-            System.out.println("Password is wrong");
-            return false;
-        }
-        System.out.println("Command not found");
-        return false;
-    }
 
     //*****************%%%%%%%%%%%%%%%******************//
 
@@ -189,7 +176,7 @@ public class AuthController {
        return true;
     }
 
-    public class PasswordGenerator {
+    public class generateRandomPassword {
 
         private static final String UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         private static final String LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
@@ -205,6 +192,7 @@ public class AuthController {
             // Ensure at least one character from each required set
             password.append(UPPERCASE.charAt(random.nextInt(UPPERCASE.length())));
             password.append(LOWERCASE.charAt(random.nextInt(LOWERCASE.length())));
+            password.append(DIGITS.charAt(random.nextInt(DIGITS.length())));
             password.append(SPECIAL_CHARACTERS.charAt(random.nextInt(SPECIAL_CHARACTERS.length())));
 
             for (int i = 3; i < PASSWORD_LENGTH; i++) {

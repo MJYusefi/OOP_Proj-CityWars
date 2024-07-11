@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="346.0" prefWidth="421.0" style="-fx-background-color: #f0f0f0;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.LoginMenu2">
+
+    <Text layoutX="95.0" layoutY="46.0" text="Welcome To City Wars" AnchorPane.leftAnchor="95.0" AnchorPane.topAnchor="24.8828125">
+        <font>
+            <Font name="Forte" size="24.0" />
+        </font>
+    </Text>
+
+    <Label layoutX="20.0" layoutY="95.0" text="Username:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="95.0">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font></Label>
+    <TextField fx:id="usernameField" layoutX="139.0" layoutY="91.0" prefHeight="25.0" prefWidth="260.0" stylesheets="@../CSS/styles.css" AnchorPane.leftAnchor="139.0" AnchorPane.topAnchor="91.0" />
+
+    <Label layoutX="18.0" layoutY="135.0" stylesheets="@../CSS/styles.css" text="Password:" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="135.0">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font></Label>
+    <PasswordField fx:id="passwordField" layoutX="139.0" layoutY="129.0" prefHeight="25.0" prefWidth="260.0" stylesheets="@../CSS/styles.css" AnchorPane.leftAnchor="139.0" AnchorPane.topAnchor="129.0" />
+
+    <Button fx:id="signInButton" layoutX="139.0" layoutY="237.0" prefHeight="34.0" prefWidth="69.0" stylesheets="@../CSS/styles.css" text="Sign In" AnchorPane.leftAnchor="139.0" AnchorPane.topAnchor="237.0" />
+    <Button fx:id="signUpButton" layoutX="216.0" layoutY="237.0" prefHeight="34.0" prefWidth="69.0" stylesheets="@../CSS/styles.css" text="Cancel" AnchorPane.leftAnchor="216.0" AnchorPane.topAnchor="237.0" />
+    <Button fx:id="forgotPasswordButton" layoutX="251.0" layoutY="291.0" prefHeight="25.0" prefWidth="147.0" stylesheets="@../CSS/styles.css" text="Forgot Password?" AnchorPane.leftAnchor="251.0" AnchorPane.topAnchor="291.0" />
+    <Label fx:id="messageLabel" layoutX="63.0" layoutY="61.0" prefHeight="17.0" prefWidth="306.0">
+        <font>
+            <Font name="Footlight MT Light" size="14.0" />
+        </font>
+    </Label>
+    <TextField fx:id="answer" layoutX="139.0" layoutY="200.0" prefHeight="25.0" prefWidth="260.0" stylesheets="@../CSS/styles.css" />
+    <Label layoutX="19.0" layoutY="204.0" prefHeight="17.0" prefWidth="113.0" text="Security question :">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Label>
+    <Label fx:id="messageLabel1" layoutX="76.0" layoutY="164.0" prefHeight="17.0" prefWidth="306.0">
+        <font>
+            <Font name="Footlight MT Light" size="14.0" />
+        </font>
+    </Label>
+
+</AnchorPane>

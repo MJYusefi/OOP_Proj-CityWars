@@ -10,17 +10,17 @@
 
 <?import java.lang.String?>
 <?import javafx.collections.FXCollections?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.SettingsMenuController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.SettingsMenuController" stylesheets="@../CSS/styles.css">
     <VBox alignment="CENTER" spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
-        <Label text="Settings" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+        <Label text="Settings" style="-fx-font-size: 24px; -fx-font-weight: bold;" stylesheets="@../CSS/styles.css"/>
 
         <!-- Volume Slider -->
-        <Label text="Volume" />
-        <Slider fx:id="volumeSlider" min="0" max="100" value="50" showTickLabels="true" showTickMarks="true" majorTickUnit="50" minorTickCount="5" blockIncrement="10" />
+        <Label text="Volume" stylesheets="@../CSS/styles.css"/>
+        <Slider fx:id="volumeSlider" min="0" max="100" value="50" showTickLabels="true" showTickMarks="true" majorTickUnit="50" minorTickCount="5" blockIncrement="10" stylesheets="@../CSS/styles.css"/>
 
         <!-- Theme Selector -->
-        <Label text="Theme" />
-        <ComboBox fx:id="themeComboBox">
+        <Label text="Theme" stylesheets="@../CSS/styles.css"/>
+        <ComboBox fx:id="themeComboBox" stylesheets="@../CSS/styles.css">
             <items>
                 <FXCollections fx:factory="observableArrayList">
                     <String fx:value="Default" />
@@ -31,11 +31,11 @@
         </ComboBox>
 
         <!-- Music Selector -->
-        <Label text="Background Music" />
-        <Button text="Change Music" onAction="#changeMusic" />
+        <Label text="Background Music" stylesheets="@../CSS/styles.css"/>
+        <Button text="Change Music" onAction="#changeMusic" stylesheets="@../CSS/styles.css"/>
 
         <!-- Buttons -->
-        <Button text="Apply" onAction="#applySettings" />
-        <Button text="Back" onAction="#goBack" />
+        <Button text="Apply" onAction="#applySettings" stylesheets="@../CSS/styles.css"/>
+        <Button text="Back" onAction="#goBack" stylesheets="@../CSS/styles.css"/>
     </VBox>
 </AnchorPane>
