@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/22"
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/22" styleClass="other-menu-pane"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.WinLoseMenu">
    <Button layoutX="300.0" layoutY="519.0" mnemonicParsing="false" onMouseClicked="#back" prefHeight="50.0" stylesheets="@../CSS/styles.css"
            prefWidth="400.0" text="Back to Main Menu">

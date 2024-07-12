@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="346.0" prefWidth="421.0" style="-fx-background-color: #f0f0f0;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.LoginMenu2">
+<AnchorPane prefHeight="346.0" prefWidth="421.0" style="-fx-background-color: #f0f0f0;" styleClass="other-menu-pane" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.LoginMenu2">
 
     <Text layoutX="95.0" layoutY="46.0" text="Welcome To City Wars" AnchorPane.leftAnchor="95.0" AnchorPane.topAnchor="24.8828125">
         <font>

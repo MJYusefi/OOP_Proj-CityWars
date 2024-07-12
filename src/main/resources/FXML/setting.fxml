@@ -10,7 +10,7 @@
 
 <?import java.lang.String?>
 <?import javafx.collections.FXCollections?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.SettingsMenuController" stylesheets="@../CSS/styles.css">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.SettingsMenuController" stylesheets="@../CSS/styles.css" styleClass="settings-menu-pane">
     <VBox alignment="CENTER" spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
         <Label text="Settings" style="-fx-font-size: 24px; -fx-font-weight: bold;" stylesheets="@../CSS/styles.css"/>
 

@@ -110,6 +110,10 @@ public class Player {
                 int cardId = rs.getInt("id");
                 Card card = Database.getCardById(cardId);
                 if (card != null) {
+                    for(int i = 0 ; i < card.curlevel ; i++) {
+                        card.playDamage += 10;
+                        card.defAtt +=10;
+                    }
                     playerDeck.add(card);
                 }
             }

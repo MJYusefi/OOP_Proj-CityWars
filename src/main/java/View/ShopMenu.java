@@ -133,7 +133,7 @@ public class ShopMenu extends Application {
             else cardDuration.setText("Duration :" + String.valueOf(tmp.dur));
             if(tmp.defAtt == -1) cardDamage.setText("Def/Atk :" + "*");
             else cardDefense.setText("Def/Atk :" + String.valueOf(tmp.defAtt));
-            cardImage.setImage(new Image(String.valueOf(getClass().getResource("/img/Avatar.jpg"))));
+            cardImage.setImage(new Image(String.valueOf(getClass().getResource("/img/Avatar.png"))));
             lockedStatusImage.setImage(new Image(String.valueOf(getClass().getResource("/img/lock.png"))));
         }
     }

@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="495.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ProfileMenu">
+<AnchorPane prefHeight="600.0" prefWidth="495.0" styleClass="settings-menu-pane" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ProfileMenu">
     <!-- User Information at the Top -->
     <Text fx:id="username" layoutX="225.0" layoutY="45.0" styleClass="user-info" text="Username:" textAlignment="CENTER" wrappingWidth="186.00000047683716" AnchorPane.leftAnchor="225.0" AnchorPane.topAnchor="27.43798828125">
       <font>

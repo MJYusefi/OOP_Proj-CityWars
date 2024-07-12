@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="450.0" prefWidth="450.0" styleClass="main-pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.RegisterMenu">
+<AnchorPane prefHeight="450.0" prefWidth="450.0" styleClass="other-menu-pane" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.RegisterMenu">
 
     <Text layoutX="75.0" layoutY="26.94921875" styleClass="header-text" text="Register" textAlignment="CENTER" wrappingWidth="300.3646125793457" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="14.0">
       <font>

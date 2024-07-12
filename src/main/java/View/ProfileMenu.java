@@ -78,8 +78,8 @@ public class ProfileMenu extends Application {
         emailField.setText(AuthController.LoginUser.getEmail());
         nicknameField.setText(AuthController.LoginUser.getNickname());
         coin.setText(String.valueOf(AuthController.LoginUser.coin) + " Coins");
-        xp.setText(STR."\{AuthController.LoginUser.xp} / 2000  XP");
-        xpProgressBar.setProgress((double) AuthController.LoginUser.xp /2000);
+        xp.setText(STR."\{AuthController.LoginUser.xp} / 100  XP");
+        xpProgressBar.setProgress((double) AuthController.LoginUser.xp /100);
         hp.setText(String.valueOf(AuthController.LoginUser.hp) + " HP");
 
         // Example deck cards
@@ -128,7 +128,7 @@ public class ProfileMenu extends Application {
             else cardDuration.setText(String.valueOf(tmp.dur));
             if(tmp.defAtt == -1) cardDamage.setText("*");
             else cardDefense.setText(String.valueOf(tmp.defAtt));
-            cardImage.setImage(new Image(String.valueOf(getClass().getResource("/img/Avatar.jpg"))));
+            cardImage.setImage(new Image(String.valueOf(getClass().getResource("/img/Avatar.png"))));
         }
     }
 

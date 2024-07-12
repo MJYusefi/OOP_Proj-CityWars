@@ -21,23 +21,22 @@ import java.io.IOException;
 
 public class SettingsMenuController extends Application {
 
+    public static String sound = "/Music/1.mp3";
     @FXML
     private Slider volumeSlider;
 
     @FXML
     private ComboBox<String> themeComboBox;
 
-    private AudioClip audioClip;
-
     @FXML
     public void initialize() {
-        if(volumeSlider != null) {
-            volumeSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
-                if (audioClip != null) {
-                    audioClip.setVolume(newValue.doubleValue() / 100);
-                }
-            });
-        }
+        MusicPlayer mediaPlayer = MusicPlayer.getInstance("");
+        volumeSlider.setValue(mediaPlayer.getVolume() * 100);
+
+        volumeSlider.setValue(mediaPlayer.getVolume() * 100); // Convert to 0-100 range
+        volumeSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            mediaPlayer.setVolume(newValue.doubleValue() / 100); // Convert back to 0-1 range
+        });
     }
 
     @FXML
@@ -69,25 +68,13 @@ public class SettingsMenuController extends Application {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choose Music File");
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Audio Files", "*.wav", "*.mp3"));
-        Stage stage = (Stage) volumeSlider.getScene().getWindow();
         File selectedFile = fileChooser.showOpenDialog(stage);
         if (selectedFile != null) {
-            String musicFilePath = selectedFile.toURI().toString();
-            if (audioClip != null) {
-                audioClip.stop();
-            }
-            audioClip = new AudioClip(musicFilePath);
-            audioClip.setVolume(volumeSlider.getValue() / 100);
-            audioClip.play();
+            String musicFilePath = selectedFile.getAbsolutePath();
+            MusicPlayer.setNewMusic(musicFilePath);
         }
     }
 
-    public void setAudioClip(AudioClip audioClip) {
-        this.audioClip = audioClip;
-        if (audioClip != null) {
-            volumeSlider.setValue(audioClip.getVolume() * 100);
-        }
-    }
 
     public static Stage stage;
     public void start(Stage stage) throws IOException {

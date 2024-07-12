@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -20,9 +21,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class MainMenu extends Application {
-    public static void main(String[] args) {
-        launch(args);
-    }
 
     @FXML
     private Button startGameButton;
@@ -102,8 +100,7 @@ public class MainMenu extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-//        MusicPlayer musicPlayer = MusicPlayer.getInstance("/Music/1.mp3");
-//        musicPlayer.play();
+        MusicPlayer.getInstance("/Music/1.mp3").play();
         MainMenu.stage = stage;
         Pane pane = FXMLLoader.load(MainMenu.class.getResource("/FXML/MainMenu.fxml"));
         Scene scene = new Scene(pane);

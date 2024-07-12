@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/22"
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/22" styleClass="other-menu-pane"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.PreGameMenu">
    <VBox prefHeight="650.0" prefWidth="1000.0">
       <HBox prefHeight="650.0" prefWidth="1000.0">
