@@ -6,8 +6,8 @@ This repository contains the source code for a turn-based card game inspired by 
 
 ## 📖 **Course Information**  
 - **Course Title:** Object-Oriented Programming (OOP)  
-- **Supervisor:** [Prof. Bijan Vosoughi Vahdat, Prof. Matin Hashemi]  
-- **Semester:** [SPRING  2023-2024]
+- **Supervisor:** Prof. Bijan Vosoughi Vahdat, Prof. Matin Hashemi  
+- **Semester:** Spring 2023-2024
 ]  
 
 This project serves as the final course project, applying object-oriented principles to create an engaging turn-based card game.
