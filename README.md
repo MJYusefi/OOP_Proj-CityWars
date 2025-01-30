@@ -15,8 +15,6 @@ City Wars is a turn-based strategy card game where players engage in tactical ba
 - **Card-based gameplay**: Build your deck and strategically deploy cards to outsmart your opponent.
 - **MySQL integration**: Store player progress and game states, allowing players to resume or review past sessions.
 
----
-
 ## 🛠️ **Tools and Technologies**
 
 - **Java**: Primary programming language for implementing game logic and functionality.  
@@ -25,16 +23,12 @@ City Wars is a turn-based strategy card game where players engage in tactical ba
 - **Git**: Version control to manage code and collaborate with teammates.  
 - **Trello**: Task management tool to track progress and plan the development process.
 
----
-
 ## 🚀 **Project Highlights**
 
 - Developed a turn-based card game based on **City Wars: Tokyo Reign**.
 - Integrated **MySQL** for user data and game state persistence.
 - Created both a **CLI** and **GUI** interface, offering flexibility in how players interact with the game.
 - Managed version control with **GitHub** and organized the development process using **Trello**.
-
----
 
 ## 👨‍🏫 **Supervisors**
 
